@@ -6,7 +6,7 @@ const { Server } = require("socket.io");
 app.use(cors());
 
 const server = http.createServer(app);
-const corsWhitelist = ['http://localhost:8000', 'http://172.17.0.217:8000'];
+const corsWhitelist = ['https://chat-app-bcmi.onrender.com'];
 const io = new Server(server, {
   cors: {
     origin: function (origin, callback) {
