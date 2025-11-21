@@ -8,6 +8,7 @@ const socket = io.connect("https://chat-app-server-00jj.onrender.com");
 function App() {
   const room = "SSG";
   const [messageHistory, setMessageHistory] = useState([]);
+  const [showChat, setShowChat] = useState(false);
 
   const joinRoom = () => {
       socket.emit("join_room", room);
