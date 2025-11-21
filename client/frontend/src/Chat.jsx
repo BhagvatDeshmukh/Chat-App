@@ -5,6 +5,9 @@ function Chat({ socket, room, msgHistory }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState(msgHistory);
 
+  console.log(msgHistory);
+
+
   const sendMessage = async () => {
     if (currentMessage !== "") {
       const messageData = {
