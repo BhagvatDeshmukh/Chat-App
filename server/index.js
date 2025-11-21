@@ -32,6 +32,8 @@ io.on("connection", (socket) => {
 
   socket.on("send_message", (data) => {
     messages.push(data);
+    console.log(messages);
+    console.log(data);
     socket.to(data.room).emit("receive_message", data);
   });
 
