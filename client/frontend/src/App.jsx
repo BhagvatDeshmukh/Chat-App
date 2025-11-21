@@ -1,6 +1,6 @@
 import "./App.css";
 import io from "socket.io-client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Chat from "./Chat";
 
 const socket = io.connect("https://chat-app-server-00jj.onrender.com");
