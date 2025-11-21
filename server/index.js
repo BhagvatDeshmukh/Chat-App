@@ -16,19 +16,22 @@ const io = new Server(server, {
   },
 });
 
+let messages=[];
+
 io.on("connection", (socket) => {
   console.log(`User Connected: ${socket.id}`);
 
   socket.on("join_room", (data) => {
     socket.join(data);
     console.log(`User with ID: ${socket.id} joined room: ${data}`);
-
+    socket.emit("msg_history", messages);
 
   });
 
 
 
   socket.on("send_message", (data) => {
+    messages.push(data);
     socket.to(data.room).emit("receive_message", data);
   });
 
