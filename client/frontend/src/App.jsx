@@ -18,7 +18,7 @@ function App() {
     useEffect(() => {
 
     socket.on("msg_history", (history) => {
-      setMessageHistory((list) => [...list, history]);
+      setMessageHistory((list) => [...list, ...history]);
     });
 
   }, [socket]);
