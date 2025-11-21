@@ -3,7 +3,7 @@ import ScrollToBottom from "react-scroll-to-bottom";
 
 function Chat({ socket, room, msgHistory }) {
   const [currentMessage, setCurrentMessage] = useState("");
-  const [messageList, setMessageList] = useState([...msgHistory]);
+  const [messageList, setMessageList] = useState(msgHistory);
 
   const sendMessage = async () => {
     if (currentMessage !== "") {
